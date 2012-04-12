@@ -1,0 +1,49 @@
+<head>
+  <title>Messages</title>
+</head>
+
+<body class="container">
+	<br/></br>
+ 	
+   <div>
+    {{> Chat}}
+   </div>
+
+</body>
+
+<template name="Chat">
+  	
+	<div>	
+	<div class="row">
+		<div class="offset6 span4">
+		<table class="table">
+    {{#each messages}}
+     {{> message}}
+    {{/each}}
+		</table>
+	</div>
+ 	</div>
+ 	
+	<div class="row">
+		<div class="offset6 span4">
+	<input type="text" id="msg" onkeydown="if (event.keyCode == 13) document.getElementById('add').click();" /> 
+	<input type="button" class="clear" value="poof!" />
+	<input type="button" id="add" class="add" style="visibility:hidden;"/>
+	</div></div>
+	
+	<div class="row">
+		<div class="offset6 span3">
+			<div class="alert alert-success">
+ 		 		It's a cat!  
+			</div>
+		</div>
+	</div>	
+ </div>
+ 
+   
+</template>
+
+<template name="message">
+    <tr><td><span class="text"> {{content}} </span></td></tr>
+</template>
+
